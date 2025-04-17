@@ -1,0 +1,124 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="KFCproject.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link href ="/Style/Site.Css" rel="stylesheet" type="text/css" />
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+
+
+     <!-- code for DataTable -->
+         <script src="https://code.jquery.com/jquery-3.5.1.js"></script> 
+        <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js" ></script> 
+        <link href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+            });
+        </script>
+    <!-- code for DataTable end -->
+
+ 
+    <style type="text/css">
+        .auto-style2 {
+            /*margin: 40px 8px 8px 8px;*/border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            padding: 0px 12px;
+            min-height: 420px;
+            width: 1507px;
+            background-color: #fff;
+            margin: 50px 0px 0px 200px;
+            height: 447px;
+        }
+        .auto-style3 {
+            display: block;
+            background-color: #b7b7b7; /*float: left;*/;
+            text-align: left;
+            width: auto;
+            font-size: medium;
+            height: 187px;
+        }
+    </style>
+
+ 
+</head>
+<body style="background"="white" >
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+         <div class="header" style="background-color : lightblue">
+            <div class="auto-style3" style="background-color: lightblue">
+                <h1>
+                    <span style="color: bisque ;font-size: larger;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"  >Appointment System </span>&nbsp;</h1>
+            </div>
+              </div>
+         </div>
+            <div class="clear hideSkiplink" style="background-color: white" >
+                
+               
+                
+                
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+                    IncludeStyleBlock="false" Orientation="Horizontal" style="background-color: white"  >
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/About.aspx"  Text="About_us"  Value="About_us"  ></asp:MenuItem>
+                        <asp:MenuItem Text="Login" Value="Login"  >
+
+                         <asp:MenuItem NavigateUrl="~/demo/DataLog2.aspx" Text="Login" Value="Login"></asp:MenuItem>
+                         <asp:MenuItem NavigateUrl="~/demo/sendEmail.aspx" Text="send Email" Value="send Email"></asp:MenuItem>
+                        </asp:MenuItem>
+                         <asp:MenuItem NavigateUrl="~/demo2/Booking_appointments.aspx" Text="Booking_appointments" Value="Booking_appointments"></asp:MenuItem>
+                         
+
+                        
+                    </Items>
+                    
+          
+                   
+
+
+                </asp:Menu>
+            
+      
+        <div class=auto-style2  style="background-color: white"  style="margin-left: 0px" >
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"  >
+            </asp:ContentPlaceHolder>
+            </div>
+            <%--<footer style="background-color: white">
+                <p>&copy; <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884  </p>
+
+            <hr  style="background-color: white"/>
+
+            </footer style="background-color"= "white" style="margin-left: 0px">--%>
+        
+
+    </form >
+</body>
+</html>
